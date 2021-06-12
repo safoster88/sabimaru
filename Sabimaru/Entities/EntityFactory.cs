@@ -2,8 +2,8 @@ namespace Sabimaru.Entities
 {
 	public class EntityFactory
 	{
-		private int idCounter;
+		public int IdCounter { get; private set; }
 		
-		public int Create() => idCounter++;
+		public int Create() => IdCounter++;
 	}
 }
