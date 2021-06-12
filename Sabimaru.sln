@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sabimaru", "Sabimaru\Sabimaru.csproj", "{98DE3C54-253E-42B4-99ED-D947496C8F1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sabimaru.Tests", "Sabimaru.Tests\Sabimaru.Tests.csproj", "{3D29DB67-FFAD-43AC-93AC-5E9AAAB90A86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98DE3C54-253E-42B4-99ED-D947496C8F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98DE3C54-253E-42B4-99ED-D947496C8F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98DE3C54-253E-42B4-99ED-D947496C8F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98DE3C54-253E-42B4-99ED-D947496C8F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D29DB67-FFAD-43AC-93AC-5E9AAAB90A86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D29DB67-FFAD-43AC-93AC-5E9AAAB90A86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D29DB67-FFAD-43AC-93AC-5E9AAAB90A86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D29DB67-FFAD-43AC-93AC-5E9AAAB90A86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
