@@ -10,7 +10,7 @@ namespace Sabimaru.Tests.Entities
 	public class WhenReceivingMultipleCreateEntityRequests : TestBase
 	{
 		private readonly List<CreateEntityRequest> requests = new() { new(), new(), new() };
-		private readonly List<Entity> responses = new();
+		private readonly List<int> responses = new();
 
 		[Fact]
 		public async Task ThenTheResultantEntitiesShouldHaveNumericallyAscendingIds()
@@ -21,13 +21,13 @@ namespace Sabimaru.Tests.Entities
 			
 			for (var i = 0; i < responses.Count; i++)
 			{
-				responses[i].Id.Should().Be(i);
+				responses[i].Should().Be(i);
 			}
 		}
 		
 		private async Task SendRequests()
 		{
-			var tasks = new List<Task<Entity>>();
+			var tasks = new List<Task<int>>();
 
 			foreach (var request in requests)
 			{

@@ -4,6 +4,6 @@ namespace Sabimaru.Entities
 	{
 		private int idCounter;
 		
-		public Entity Create() => new Entity(idCounter++);
+		public int Create() => idCounter++;
 	}
 }

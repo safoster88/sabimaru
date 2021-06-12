@@ -2,7 +2,7 @@ namespace Sabimaru.Entities
 {
 	using MediatR;
 
-	public class CreateEntityRequestHandler : RequestHandler<CreateEntityRequest, Entity>
+	public class CreateEntityRequestHandler : RequestHandler<CreateEntityRequest, int>
 	{
 		private readonly EntityFactory entityFactory;
 
@@ -12,7 +12,7 @@ namespace Sabimaru.Entities
 			this.entityFactory = entityFactory;
 		}
 
-		protected override Entity Handle(
+		protected override int Handle(
 			CreateEntityRequest request)
 		{
 			return entityFactory.Create();
