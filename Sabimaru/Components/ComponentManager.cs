@@ -87,5 +87,26 @@ namespace Sabimaru.Components
 				throw new ComponentTypeAlreadyAttachedException();
 			}
 		}
+
+		private void GuardAgainstMissingComponentType(
+			int entityId,
+			Type componentType)
+		{
+			var componentList = GetOrCreateComponentList(entityId);
+			if (componentList.All(x => x.GetType() != componentType))
+			{
+				throw new ComponentNotAttachedException();
+			}
+		}
+
+		public void RemoveComponent(
+			int entityId,
+			Type componentType)
+		{
+			GuardAgainstMissingEntity(entityId);
+			GuardAgainstMissingComponentType(entityId, componentType);
+			var components = GetOrCreateComponentList(entityId);
+			components.RemoveAll(c => c.GetType() == componentType);
+		}
 	}
 }
