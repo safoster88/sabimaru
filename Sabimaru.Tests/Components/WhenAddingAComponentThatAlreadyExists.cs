@@ -5,8 +5,8 @@ namespace Sabimaru.Tests.Components
 	using System.Threading.Tasks;
 	using FluentAssertions;
 	using Sabimaru.Components;
-	using Sabimaru.Components.AddComponent;
-	using Sabimaru.Components.AddComponents;
+	using Sabimaru.Components.Add.Multiple;
+	using Sabimaru.Components.Add.Single;
 	using Xunit;
 
 	public abstract class WhenAddingAComponentThatAlreadyExists : TestBase

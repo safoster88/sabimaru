@@ -1,4 +1,4 @@
-namespace Sabimaru.Components.GetComponents
+namespace Sabimaru.Components.Get.Multiple
 {
 	using System;
 	using System.Collections.Generic;

@@ -28,6 +28,14 @@ namespace Sabimaru.Components
 
 		public List<ValueType> GetComponents(int entityId) => GetOrCreateComponentList(entityId);
 
+		public ValueType GetComponent(
+			int entityId,
+			Type componentType)
+		{
+			var components = GetComponents(entityId);
+			return components.SingleOrDefault(c => c.GetType() == componentType);
+		}
+
 		private void AddComponentsInternal(
 			int entityId,
 			List<ValueType> componentsToAdd)

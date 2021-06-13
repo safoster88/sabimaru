@@ -3,8 +3,9 @@ namespace Sabimaru.Tests.Components
 	using System.Threading.Tasks;
 	using FluentAssertions;
 	using Sabimaru.Components;
-	using Sabimaru.Components.AddComponent;
-	using Sabimaru.Components.GetComponents;
+	using Sabimaru.Components.Add.Single;
+	using Sabimaru.Components.Get;
+	using Sabimaru.Components.Get.Multiple;
 	using Sabimaru.Entities;
 	using Xunit;
 

@@ -3,7 +3,7 @@ namespace Sabimaru.Tests
 	using System;
 	using System.Threading.Tasks;
 	using MediatR;
-	using Sabimaru.Components.AddComponent;
+	using Sabimaru.Components.Add.Single;
 	using Sabimaru.Entities;
 
 	public abstract class TestBase
