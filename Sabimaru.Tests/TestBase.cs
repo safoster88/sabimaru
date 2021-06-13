@@ -25,5 +25,21 @@ namespace Sabimaru.Tests
 			Component = component,
 			EntityId = entityId
 		}).Wait();
+
+		protected void WaitForEngineTicks(int ticks)
+		{
+			for (var t = 0; t < ticks; t++)
+			{
+				Bootstrapper.Engine.InvokeTick();
+			}
+		}
+
+		protected void WaitForEngineFixedTicks(int fixedTicks)
+		{
+			for (var t = 0; t < fixedTicks; t++)
+			{
+				Bootstrapper.Engine.InvokeFixedTick();
+			}
+		}
 	}
 }
