@@ -5,7 +5,7 @@ namespace Sabimaru.Tests.Entities
 	using Sabimaru.Entities;
 	using Xunit;
 
-	public class WhenReceivingACreateEntityRequest : TestBase
+	public class WhenCreatingAnEntity : TestBase
 	{
 		private readonly CreateEntityRequest request = new();
 

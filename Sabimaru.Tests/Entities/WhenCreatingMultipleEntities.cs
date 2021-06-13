@@ -7,7 +7,7 @@ namespace Sabimaru.Tests.Entities
 	using Sabimaru.Entities;
 	using Xunit;
 
-	public class WhenReceivingMultipleCreateEntityRequests : TestBase
+	public class WhenCreatingMultipleEntities : TestBase
 	{
 		private readonly List<CreateEntityRequest> requests = new() { new(), new(), new() };
 		private readonly List<int> responses = new();

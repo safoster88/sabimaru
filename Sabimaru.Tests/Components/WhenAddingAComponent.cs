@@ -8,7 +8,7 @@ namespace Sabimaru.Tests.Components
 	using Sabimaru.Entities;
 	using Xunit;
 
-	public abstract class WhenReceivingAnAddComponentRequest : TestBase
+	public abstract class WhenAddingAComponent : TestBase
 	{
 		private readonly AddComponentRequest request = new()
 		{
@@ -16,7 +16,7 @@ namespace Sabimaru.Tests.Components
 			EntityId = 0
 		};
 
-		public class AndTheEntityExists : WhenReceivingAnAddComponentRequest
+		public class AndTheEntityExists : WhenAddingAComponent
 		{
 			public AndTheEntityExists()
 			{
@@ -36,7 +36,7 @@ namespace Sabimaru.Tests.Components
 			}
 		}
 
-		public class AndTheEntityDoesNotExist : WhenReceivingAnAddComponentRequest
+		public class AndTheEntityDoesNotExist : WhenAddingAComponent
 		{
 			[Fact]
 			public async Task ThenAnEntityDoesNotExistExceptionShouldBeThrown()

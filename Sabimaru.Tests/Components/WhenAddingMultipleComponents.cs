@@ -4,12 +4,11 @@ namespace Sabimaru.Tests.Components
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
 	using FluentAssertions;
-	using Sabimaru.Components;
 	using Sabimaru.Components.AddComponents;
 	using Sabimaru.Entities;
 	using Xunit;
 
-	public abstract class WhenReceivingAnAddComponentsRequest : TestBase
+	public abstract class WhenAddingMultipleComponents : TestBase
 	{
 		private readonly AddComponentsRequest request = new()
 		{
@@ -21,7 +20,7 @@ namespace Sabimaru.Tests.Components
 			}
 		};
 
-		public class AndTheEntityDoesNotExist : WhenReceivingAnAddComponentsRequest
+		public class AndTheEntityDoesNotExist : WhenAddingMultipleComponents
 		{
 			[Fact]
 			public async Task ThenAnEntityDoesNotExistExceptionIsThrown()
@@ -30,7 +29,7 @@ namespace Sabimaru.Tests.Components
 			}
 		}
 
-		public class AndTheEntityExists : WhenReceivingAnAddComponentsRequest
+		public class AndTheEntityExists : WhenAddingMultipleComponents
 		{
 			public AndTheEntityExists()
 			{
