@@ -48,7 +48,7 @@ namespace Sabimaru.Systems
 			}
 		}
 
-		public void AddSystem(object system)
+		public void AddSystem(ISystem system)
 		{
 			if (system is IInitSystem initSystem)
 			{

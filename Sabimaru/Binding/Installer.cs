@@ -16,6 +16,7 @@ namespace Sabimaru.Binding
 			services.AddSingleton<EntityFactory>();
 			services.AddSingleton<ComponentManager>();
 			services.AddSingleton<SystemManager>();
+			services.AddTransient<SabiApi>();
 			return services;
 		}
 

@@ -4,6 +4,6 @@ namespace Sabimaru.Systems.Add
 
 	public record AddSystemRequest : IRequest
 	{
-		public object System { get; init; }
+		public ISystem System { get; init; }
 	}
 }
