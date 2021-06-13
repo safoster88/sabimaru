@@ -10,7 +10,7 @@ namespace Sabimaru.Tests.Components
 
 	public abstract class WhenRemovingAComponent : TestBase
 	{
-		private RemoveComponentRequest request = new()
+		private readonly RemoveComponentRequest request = new()
 		{
 			EntityId = 0,
 			ComponentType = typeof(TestComponent1)
