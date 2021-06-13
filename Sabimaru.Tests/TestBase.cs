@@ -1,7 +1,9 @@
 namespace Sabimaru.Tests
 {
+	using System;
 	using System.Threading.Tasks;
 	using MediatR;
+	using Sabimaru.Components.AddComponent;
 	using Sabimaru.Entities;
 
 	public abstract class TestBase
@@ -17,5 +19,11 @@ namespace Sabimaru.Tests
 		protected Task PublishNotification(INotification notification) => Mediator.Publish(notification);
 
 		protected int CreateEntity() => SendRequest(new CreateEntityRequest()).Result;
+
+		protected void AddComponent(int entityId, ValueType component) => SendRequest(new AddComponentRequest
+		{
+			Component = component,
+			EntityId = entityId
+		}).Wait();
 	}
 }
