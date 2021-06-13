@@ -51,22 +51,22 @@ namespace Sabimaru.Tests.Systems
 		{
 			await SendRequest();
 			
-			var e1 = CreateEntity();
-			var e2 = CreateEntity();
-			var e3 = CreateEntity();
-			var e4 = CreateEntity();
+			var e1 = SabiApi.CreateEntity();
+			var e2 = SabiApi.CreateEntity();
+			var e3 = SabiApi.CreateEntity();
+			var e4 = SabiApi.CreateEntity();
 			
-			AddComponent(e1, new TestComponent1());
-			AddComponent(e1, new TestComponent2());
+			SabiApi.AddComponent(e1, new TestComponent1());
+			SabiApi.AddComponent(e1, new TestComponent2());
 			
-			AddComponent(e2, new TestComponent1());
-			AddComponent(e2, new TestComponent3());
+			SabiApi.AddComponent(e2, new TestComponent1());
+			SabiApi.AddComponent(e2, new TestComponent3());
 			
-			AddComponent(e3, new TestComponent1());
-			AddComponent(e3, new TestComponent2());
+			SabiApi.AddComponent(e3, new TestComponent1());
+			SabiApi.AddComponent(e3, new TestComponent2());
 			
-			AddComponent(e4, new TestComponent2());
-			AddComponent(e4, new TestComponent3());
+			SabiApi.AddComponent(e4, new TestComponent2());
+			SabiApi.AddComponent(e4, new TestComponent3());
 			
 			ForceEngineTicks(1);
 			ForceEngineFixedTicks(1);

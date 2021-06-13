@@ -29,14 +29,14 @@ namespace Sabimaru.Tests.Components
 		{
 			protected AndTheEntityExists()
 			{
-				CreateEntity();
+				SabiApi.CreateEntity();
 			}
 
 			public class AndTheComponentIsAttached : AndTheEntityExists
 			{
 				public AndTheComponentIsAttached()
 				{
-					AddComponent(0, new TestComponent1());
+					SabiApi.AddComponent(0, new TestComponent1());
 				}
 				
 				[Fact]

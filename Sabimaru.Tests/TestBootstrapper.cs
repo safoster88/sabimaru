@@ -21,5 +21,7 @@ namespace Sabimaru.Tests
 		public IMediator Mediator => Services.GetRequiredService<IMediator>();
 
 		public TestEngineBootstrapper Engine { get; } = new();
+
+		public SabiApi SabiApi => Services.GetRequiredService<SabiApi>();
 	}
 }

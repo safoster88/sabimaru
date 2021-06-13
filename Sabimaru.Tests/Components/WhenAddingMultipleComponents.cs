@@ -33,7 +33,7 @@ namespace Sabimaru.Tests.Components
 		{
 			public AndTheEntityExists()
 			{
-				CreateEntity();
+				SabiApi.CreateEntity();
 			}
 
 			[Fact]

@@ -15,8 +15,8 @@ namespace Sabimaru.Tests.Components
 		
 		protected WhenAddingAComponentThatAlreadyExists()
 		{
-			entityId = CreateEntity();
-			AddComponent(entityId, new TestComponent1());
+			entityId = SabiApi.CreateEntity();
+			SabiApi.AddComponent(entityId, new TestComponent1());
 		}
 
 		protected abstract Task SendRequest();

@@ -20,9 +20,9 @@ namespace Sabimaru.Tests.Components
 
 			public AndTheEntityExists()
 			{
-				entityId = CreateEntity();
-				AddComponent(entityId, component1);
-				AddComponent(entityId, component2);
+				entityId = SabiApi.CreateEntity();
+				SabiApi.AddComponent(entityId, component1);
+				SabiApi.AddComponent(entityId, component2);
 			}
 			
 			public class UsingTheManyRequest : AndTheEntityExists

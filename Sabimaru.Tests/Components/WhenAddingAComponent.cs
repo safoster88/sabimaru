@@ -21,7 +21,7 @@ namespace Sabimaru.Tests.Components
 		{
 			public AndTheEntityExists()
 			{
-				SendRequest(new CreateEntityRequest()).Wait();
+				SabiApi.CreateEntity();
 			}
 
 			[Fact]
@@ -29,10 +29,7 @@ namespace Sabimaru.Tests.Components
 			{
 				await SendRequest(request);
 
-				var components = await SendRequest(new GetComponentsRequest
-				{
-					EntityId = request.EntityId
-				});
+				var components = SabiApi.GetComponents(request.EntityId);
 				components.Should().ContainSingle();
 			}
 		}
