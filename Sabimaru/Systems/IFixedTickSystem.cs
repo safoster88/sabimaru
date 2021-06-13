@@ -1,7 +1,9 @@
 namespace Sabimaru.Systems
 {
-	public interface IFixedTickSystem
+	using System.Collections.Generic;
+
+	public interface IFixedTickSystem : ISystem
 	{
-		void FixedTick(float dt);
+		void FixedTick(List<int> entities, float dt);
 	}
 }

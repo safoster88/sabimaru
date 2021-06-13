@@ -26,7 +26,7 @@ namespace Sabimaru.Tests
 			EntityId = entityId
 		}).Wait();
 
-		protected void WaitForEngineTicks(int ticks)
+		protected void ForceEngineTicks(int ticks)
 		{
 			for (var t = 0; t < ticks; t++)
 			{
@@ -34,7 +34,7 @@ namespace Sabimaru.Tests
 			}
 		}
 
-		protected void WaitForEngineFixedTicks(int fixedTicks)
+		protected void ForceEngineFixedTicks(int fixedTicks)
 		{
 			for (var t = 0; t < fixedTicks; t++)
 			{

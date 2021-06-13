@@ -1,19 +1,21 @@
 namespace Sabimaru.Systems
 {
 	using System.Collections.Generic;
+	using Sabimaru.Components;
 	using Sabimaru.Engine;
 
 	public class SystemManager
 	{
-		private readonly IEngineBootstrapper engineBootstrapper;
-		private List<IInitSystem> pendingInitSystems = new();
-		private List<ITickSystem> tickSystems = new();
-		private List<IFixedTickSystem> fixedTickSystems = new();
+		private readonly ComponentManager componentManager;
+		private readonly List<IInitSystem> pendingInitSystems = new();
+		private readonly List<ITickSystem> tickSystems = new();
+		private readonly List<IFixedTickSystem> fixedTickSystems = new();
 		
 		public SystemManager(
-			IEngineBootstrapper engineBootstrapper)
+			IEngineBootstrapper engineBootstrapper,
+			ComponentManager componentManager)
 		{
-			this.engineBootstrapper = engineBootstrapper;
+			this.componentManager = componentManager;
 			engineBootstrapper.Tick += OnTick;
 			engineBootstrapper.FixedTick += OnFixedTick;
 		}
@@ -24,7 +26,8 @@ namespace Sabimaru.Systems
 		{
 			foreach (var system in fixedTickSystems)
 			{
-				system.FixedTick(dt);
+				var entities = componentManager.GetEntitiesWithComponents(system.ComponentTypes);
+				system.FixedTick(entities, dt);
 			}
 		}
 
@@ -40,7 +43,8 @@ namespace Sabimaru.Systems
 			
 			foreach (var system in tickSystems)
 			{
-				system.Tick(dt);
+				var entities = componentManager.GetEntitiesWithComponents(system.ComponentTypes);
+				system.Tick(entities, dt);
 			}
 		}
 

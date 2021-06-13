@@ -108,5 +108,21 @@ namespace Sabimaru.Components
 			var components = GetOrCreateComponentList(entityId);
 			components.RemoveAll(c => c.GetType() == componentType);
 		}
+
+		public List<int> GetEntitiesWithComponents(List<Type> componentTypes)
+		{
+			var entities = new List<int>();
+			
+			for (var e = 0; e < entityComponents.Count; e++)
+			{
+				var components = entityComponents[e];
+				if (componentTypes.TrueForAll(t => components.Any(c => c.GetType() == t)))
+				{
+					entities.Add(e);
+				}
+			}
+
+			return entities;
+		}
 	}
 }

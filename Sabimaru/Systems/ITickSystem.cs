@@ -1,7 +1,9 @@
 namespace Sabimaru.Systems
 {
-	public interface ITickSystem
+	using System.Collections.Generic;
+
+	public interface ITickSystem : ISystem
 	{
-		void Tick(float dt);
+		void Tick(List<int> entities, float dt);
 	}
 }

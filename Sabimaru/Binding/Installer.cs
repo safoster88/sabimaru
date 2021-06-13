@@ -1,5 +1,6 @@
 namespace Sabimaru.Binding
 {
+	using System;
 	using MediatR;
 	using Microsoft.Extensions.DependencyInjection;
 	using Sabimaru.Components;
@@ -7,9 +8,9 @@ namespace Sabimaru.Binding
 	using Sabimaru.Entities;
 	using Sabimaru.Systems;
 
-	public class Installer
+	public static class Installer
 	{
-		public IServiceCollection Install(IServiceCollection services)
+		public static IServiceCollection Install(IServiceCollection services)
 		{
 			services.AddMediatR(typeof(Installer));
 			services.AddSingleton<EntityFactory>();
@@ -18,11 +19,18 @@ namespace Sabimaru.Binding
 			return services;
 		}
 
-		public IServiceCollection BootstrapEngine(
+		public static IServiceCollection BootstrapEngine(
 			IServiceCollection services,
 			IEngineBootstrapper engineMount)
 		{
 			return services.AddSingleton(engineMount);
+		}
+
+		public static IServiceProvider Initialize(
+			IServiceProvider services)
+		{
+			services.GetRequiredService<SystemManager>();
+			return services;
 		}
 	}
 }

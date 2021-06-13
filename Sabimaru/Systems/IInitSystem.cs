@@ -1,6 +1,6 @@
 namespace Sabimaru.Systems
 {
-	public interface IInitSystem
+	public interface IInitSystem : ISystem
 	{
 		void Init();
 	}

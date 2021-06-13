@@ -1,5 +1,6 @@
 namespace Sabimaru.Binding
 {
+	using System;
 	using Microsoft.Extensions.DependencyInjection;
 	using Sabimaru.Engine;
 
@@ -9,10 +10,13 @@ namespace Sabimaru.Binding
 			this IServiceCollection services,
 			IEngineBootstrapper engineBootstrapper)
 		{
-			var installer = new Installer();
-			installer.Install(services);
-			installer.BootstrapEngine(services, engineBootstrapper);
+			Installer.Install(services);
+			Installer.BootstrapEngine(services, engineBootstrapper);
 			return services;
 		}
+
+		public static IServiceProvider InitSabimaru(
+			this IServiceProvider serviceProvider) =>
+			Installer.Initialize(serviceProvider);
 	}
 }

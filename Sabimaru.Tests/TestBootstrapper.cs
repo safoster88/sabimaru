@@ -13,6 +13,7 @@ namespace Sabimaru.Tests
 			var services = new ServiceCollection();
 			services.AddSabimaru(Engine);
 			Services = services.BuildServiceProvider();
+			Services.InitSabimaru();
 		}
 		
 		public IServiceProvider Services { get; }
