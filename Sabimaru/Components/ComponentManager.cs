@@ -32,6 +32,11 @@ namespace Sabimaru.Components
 			int entityId,
 			Type componentType)
 		{
+			if (!EntityExists(entityId))
+			{
+				return Component.None;
+			}
+			
 			var components = GetComponents(entityId);
 			return components.SingleOrDefault(c => c.GetType() == componentType);
 		}
@@ -59,10 +64,12 @@ namespace Sabimaru.Components
 			return entityComponents[entityId];
 		}
 
+		private bool EntityExists(int entityId) => entityId < entityFactory.IdCounter;
+
 		private void GuardAgainstMissingEntity(
 			int entityId)
 		{
-			if (entityId >= entityFactory.IdCounter)
+			if (!EntityExists(entityId))
 			{
 				throw new EntityDoesNotExistException();
 			}
