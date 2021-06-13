@@ -1,6 +1,6 @@
 namespace Sabimaru.Tests.Components
 {
-	public struct TestComponent
+	public struct TestComponent1
 	{
 		
 	}

@@ -3,18 +3,20 @@ namespace Sabimaru.Tests.Components
 	using System.Threading.Tasks;
 	using FluentAssertions;
 	using Sabimaru.Components;
+	using Sabimaru.Components.AddComponent;
+	using Sabimaru.Components.GetComponents;
 	using Sabimaru.Entities;
 	using Xunit;
 
-	public abstract class WhenAddingAComponent : TestBase
+	public abstract class WhenReceivingAnAddComponentRequest : TestBase
 	{
 		private readonly AddComponentRequest request = new()
 		{
-			Component = new TestComponent(),
+			Component = new TestComponent1(),
 			EntityId = 0
 		};
 
-		public class AndTheEntityExists : WhenAddingAComponent
+		public class AndTheEntityExists : WhenReceivingAnAddComponentRequest
 		{
 			public AndTheEntityExists()
 			{
@@ -34,7 +36,7 @@ namespace Sabimaru.Tests.Components
 			}
 		}
 
-		public class AndTheEntityDoesNotExist : WhenAddingAComponent
+		public class AndTheEntityDoesNotExist : WhenReceivingAnAddComponentRequest
 		{
 			[Fact]
 			public async Task ThenAnEntityDoesNotExistExceptionShouldBeThrown()

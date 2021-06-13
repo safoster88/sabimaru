@@ -1,4 +1,4 @@
-namespace Sabimaru.Components
+namespace Sabimaru.Components.AddComponent
 {
 	using System;
 	using MediatR;
